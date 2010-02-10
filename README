@@ -1,0 +1,28 @@
+BkTrees are pretty cool.
+
+
+This one is extremely alpha though, so... You should probably look elsewhere.  It's pretty fast though, and that's pretty cool.
+
+
+Anyway, if you want to give it a shot just do something like this:
+
+  ruby extconf.rb && make
+
+
+And using it is really simple.  It only has two methods:
+
+  require 'bktree'
+
+  bk = BkTree.new
+  bk.add 'foo'
+  bk.add 'bar'
+  bk.add 'baz'
+
+  bk.query 'bor', 2  #=> [['bar', 1], ['baz', 2]]
+
+
+Have fun.
+
+
+           Your pal,
+             Tyler McMullen
