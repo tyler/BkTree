@@ -8,6 +8,10 @@ Anyway, if you want to give it a shot just do something like this:
 
   ruby extconf.rb && make
 
+Or install it via rubygems:
+
+  gem install bktree
+
 
 And using it is really simple.  It only has two methods:
 
