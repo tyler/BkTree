@@ -16,7 +16,7 @@ static VALUE rb_bktree_add(VALUE self, VALUE word) {
     BKTree * bktree;
     Data_Get_Struct(self, BKTree, bktree);
 
-    bktree_add(bktree, RSTRING(word)->ptr, RSTRING(word)->len);
+    bktree_add(bktree, RSTRING_PTR(word), RSTRING_LEN(word));
 
     return Qnil;
 }
@@ -28,7 +28,7 @@ static VALUE rb_bktree_query(VALUE self, VALUE word, VALUE max) {
     Data_Get_Struct(self, BKTree, bktree);
 
     VALUE result_out = rb_ary_new();
-    BKResult * result = bktree_query(bktree, RSTRING(word)->ptr, RSTRING(word)->len, FIX2INT(max));
+    BKResult * result = bktree_query(bktree, RSTRING_PTR(word), RSTRING_LEN(word), FIX2INT(max));
     while(result) {
         VALUE result_node = rb_ary_new();
 
